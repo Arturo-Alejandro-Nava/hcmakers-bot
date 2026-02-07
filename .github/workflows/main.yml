@@ -1,0 +1,28 @@
+name: Train Bot
+on:
+  schedule:
+    - cron: '0 5 * * *' # Runs every morning
+  workflow_dispatch:      # Allows manual click-to-run
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements.txt
+      - name: Build DB
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python builder.py
+      - name: Save DB
+        run: |
+          git config --global user.name "Bot"
+          git config --global user.email "bot@hcmakers.com"
+          git add hcmakers_db
+          git commit -m "Updated Knowledge" || echo "No changes"
+          git push

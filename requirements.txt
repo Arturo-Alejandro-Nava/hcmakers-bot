@@ -1,0 +1,14 @@
+flask
+flask-cors
+gunicorn
+beautifulsoup4
+requests
+pdfminer.six
+langchain
+langchain-community
+langchain-core
+langchain-chroma
+langchain-google-genai
+langchain-huggingface
+sentence-transformers
+chromadb
