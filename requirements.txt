@@ -1,12 +1,12 @@
 streamlit
+pypdf
 beautifulsoup4
 requests
-pypdf
+chromadb
+sentence-transformers
 langchain
 langchain-community
 langchain-core
 langchain-chroma
 langchain-google-genai
 langchain-huggingface
-sentence-transformers
-chromadb
