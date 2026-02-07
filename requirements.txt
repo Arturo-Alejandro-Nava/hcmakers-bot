@@ -1,9 +1,7 @@
-flask
-flask-cors
-gunicorn
+streamlit
 beautifulsoup4
 requests
-pdfminer.six
+pypdf
 langchain
 langchain-community
 langchain-core
